@@ -12,6 +12,10 @@
     {
       "source": "/predict",
       "destination": "/api/index"
+    },
+    {
+      "source": "/predict/timeline",
+      "destination": "/api/index"
     }
   ]
 }
