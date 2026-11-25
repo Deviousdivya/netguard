@@ -6,3 +6,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 
 from fastapi import FastAPI  # noqa: E402
 from main import app as backend  # noqa: E402
+
+app = FastAPI()
+app.mount("/api", backend)
