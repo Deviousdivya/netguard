@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 pandas
-xgboost
+xgboost-cpu
 joblib
 python-dotenv
 httpx
