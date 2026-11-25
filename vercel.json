@@ -4,7 +4,8 @@
   "outputDirectory": "frontend/dist",
   "functions": {
     "api/index.py": {
-      "includeFiles": "{backend/*.pkl,data/master_train.csv}"
+      "includeFiles": "{backend/*.pkl,data/master_train.csv}",
+      "maxDuration": 60
     }
   }
 }
