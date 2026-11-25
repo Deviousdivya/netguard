@@ -20,6 +20,10 @@
     {
       "source": "/copilot",
       "destination": "/api/index"
+    },
+    {
+      "source": "/copilot/remediation",
+      "destination": "/api/index"
     }
   ]
 }
