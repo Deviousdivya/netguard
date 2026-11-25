@@ -1,3 +1,4 @@
 {
-  "installCommand": "cd frontend && npm install"
+  "installCommand": "cd frontend && npm install",
+  "buildCommand": "cd frontend && npm run build"
 }
