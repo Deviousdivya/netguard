@@ -121,6 +121,24 @@ def _parse_model_json(raw: str):
         raise
 
 
+def _gemini_call(model_name: str, prompt: str) -> str:
+    """One Gemini generateContent call over plain REST (no heavy SDK, keeps the serverless bundle small)."""
+    if not GEMINI_API_KEY:
+        raise RuntimeError("GEMINI_API_KEY is not configured")
+    r = httpx.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent",
+        headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
+        json={
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"responseMimeType": "application/json"},
+        },
+        timeout=40.0,
+    )
+    r.raise_for_status()
+    parts = r.json()["candidates"][0]["content"]["parts"]
+    return "".join(p.get("text", "") for p in parts)
+
+
 def _generate_with_gemini_fallback(prompt: str):
     """
     Iterate through available Gemini candidate models to prevent 429 quota limits.
