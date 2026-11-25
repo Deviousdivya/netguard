@@ -4,4 +4,3 @@ pandas
 xgboost
 joblib
 python-dotenv
-google-generativeai
