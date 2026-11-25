@@ -6,7 +6,7 @@ import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
 from dotenv import load_dotenv
-import google.generativeai as genai
+import httpx
 # import time  
 
 load_dotenv()
