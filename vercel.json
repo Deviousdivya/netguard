@@ -16,6 +16,10 @@
     {
       "source": "/predict/timeline",
       "destination": "/api/index"
+    },
+    {
+      "source": "/copilot",
+      "destination": "/api/index"
     }
   ]
 }
