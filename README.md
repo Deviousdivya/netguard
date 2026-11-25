@@ -257,6 +257,14 @@ The whole app (React frontend + FastAPI backend) runs as a single Vercel project
 - **Bundled files:** the XGBoost model (`backend/*.pkl`) and `data/master_train.csv` (used for the "Past" window) are included with the function.
 - **Dependencies:** `requirements.txt` uses `xgboost-cpu` (the default `xgboost` wheel is too large for serverless) and calls Gemini over plain REST via `httpx`.
 
+### Environment variables
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | For the copilot only | Used by `/copilot` and `/copilot/remediation`. Predictions (`/predict`, `/predict/timeline`) work without it. |
+
+The first request after a quiet period can be slower while the function loads the model.
+
 ## 🔌 API Reference
 
 ### 1. Health Check
