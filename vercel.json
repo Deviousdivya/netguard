@@ -7,5 +7,11 @@
       "includeFiles": "{backend/*.pkl,data/master_train.csv}",
       "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/predict",
+      "destination": "/api/index"
+    }
+  ]
 }
