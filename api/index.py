@@ -9,3 +9,4 @@ from main import app as backend  # noqa: E402
 
 app = FastAPI()
 app.mount("/api", backend)
+app.mount("/", backend)
