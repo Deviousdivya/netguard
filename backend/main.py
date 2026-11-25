@@ -146,10 +146,9 @@ def _generate_with_gemini_fallback(prompt: str):
     last_err = None
     for model_name in GEMINI_CANDIDATE_MODELS:
         try:
-            ai_model = genai.GenerativeModel(model_name)
-            resp = ai_model.generate_content(prompt)
-            if resp and resp.text:
-                return _parse_model_json(resp.text), model_name
+            text = _gemini_call(model_name, prompt)
+            if text:
+                return _parse_model_json(text), model_name
         except Exception as e:
             print(f"INFO: Model {model_name} rate-limited or unavailable: {e}. Trying fallback...")
             last_err = e
