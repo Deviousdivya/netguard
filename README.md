@@ -248,6 +248,15 @@ cd netguard-ai
 
 ---
 
+## ☁️ Deploying on Vercel
+
+The whole app (React frontend + FastAPI backend) runs as a single Vercel project, with no separate server to keep alive.
+
+- **Frontend:** built from `frontend/` with Vite and served as static files from `frontend/dist`.
+- **Backend:** `api/index.py` exposes the FastAPI app from `backend/main.py` as a Python serverless function. `vercel.json` rewrites `/predict`, `/predict/timeline`, `/copilot` and `/copilot/remediation` to it, so the frontend keeps calling same-origin URLs.
+- **Bundled files:** the XGBoost model (`backend/*.pkl`) and `data/master_train.csv` (used for the "Past" window) are included with the function.
+- **Dependencies:** `requirements.txt` uses `xgboost-cpu` (the default `xgboost` wheel is too large for serverless) and calls Gemini over plain REST via `httpx`.
+
 ## 🔌 API Reference
 
 ### 1. Health Check
