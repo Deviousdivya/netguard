@@ -9,21 +9,9 @@
     }
   },
   "rewrites": [
-    {
-      "source": "/predict",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/predict/timeline",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/copilot",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/copilot/remediation",
-      "destination": "/api/index"
-    }
+    { "source": "/predict", "destination": "/api/index" },
+    { "source": "/predict/timeline", "destination": "/api/index" },
+    { "source": "/copilot", "destination": "/api/index" },
+    { "source": "/copilot/remediation", "destination": "/api/index" }
   ]
 }
