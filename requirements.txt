@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pandas
+xgboost-cpu
+scikit-learn
+joblib
+python-dotenv
+httpx
