@@ -15,6 +15,10 @@
   <b>Transforming reactive telecom troubleshooting into proactive, multi-horizon fault prevention and role-tailored incident resolution.</b>
 </p>
 
+<p align="center">
+  🌐 <b>Live demo:</b> <a href="https://netguard-ai-pi.vercel.app">netguard-ai-pi.vercel.app</a>
+</p>
+
 [Key Features](#-key-features) • [System Architecture](#-system-architecture) • [Machine Learning Pipeline](#-machine-learning--telemetry-pipeline) • [Role-Aware Copilot](#-role-aware-genai-copilot) • [Quick Start](#-quick-start-guide) • [API Documentation](#-api-reference)
 
 ---
